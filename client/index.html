@@ -3,20 +3,29 @@
 <head>
   <meta charset="utf-8">
   <link rel="stylesheet" href="./index.css">
-  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.6.0/styles/default.min.css">
-  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.6.0/highlight.min.js"></script>
+  <link rel="stylesheet" href="./codemirror/lib/codemirror.css">
+  <script src="./codemirror/lib/codemirror.js"></script>
+  <script src="./index.js"></script>
 </head>
 <body>
 <header>
-
+    <a class="logo-link" href=".">
+        <img class="logo" height="32" src="./logo.png">
+    </a>
+    <div class="menus">
+        <div id="btn-run" class="btn run">Run</div>
+    </div>
+    <div class="right-menus">
+        <select></select>
+    </div>
 </header>
 <div class="content">
   <div class="editor">
-    <textarea>
-    </textarea>
+      <textarea id="editor-ta"></textarea>
   </div>
   <div class="splitter"></div>
   <div class="result">
+      <textarea id="result-ta"></textarea>
   </div>
 </div>
 </body>
