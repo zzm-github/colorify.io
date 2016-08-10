@@ -1,0 +1,19 @@
+{
+  "name": "colorify.io",
+  "version": "0.1.0",
+  "description": "code highlight online service",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zzm-github/colorify.io.git"
+  },
+  "author": "zzm@mifunstudio.com",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zzm-github/colorify.io/issues"
+  },
+  "homepage": "https://github.com/zzm-github/colorify.io#readme"
+}
