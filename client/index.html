@@ -5,6 +5,11 @@
   <link rel="stylesheet" href="./index.css">
   <link rel="stylesheet" href="./codemirror/lib/codemirror.css">
   <script src="./codemirror/lib/codemirror.js"></script>
+  <script src="./codemirror/addon/mode/loadMode.js"></script>
+  <script src="./codemirror/addon/mode/multiplex.js"></script>
+  <script src="./codemirror/addon/mode/overlay.js"></script>
+  <script src="./codemirror/addon/mode/simple.js"></script>
+  <script src="./codemirror/mode/meta.js"></script>
   <script src="./index.js"></script>
 </head>
 <body>
@@ -13,152 +18,27 @@
         <img class="logo" height="32" src="./logo.png">
     </a>
     <div class="menus">
-        <div id="btn-run" class="btn run">Run</div>
+        <div id="btn-update" class="btn update">Update</div>
+        <div id="btn-save" class="btn save">Save</div>
     </div>
     <div class="right-menus">
     </div>
 </header>
 <div class="content">
   <div class="editor">
-      <select id="language-select" class="language">
+      <select id="language-hidden-select" class="language-appearance">
+        <option></option>
+      <select>
+      <select id="language-select" class="language language-appearance">
         <option value="">Language</option>
-        <option value="APL">APL</option>
-        <option value="ASN.1">ASN.1</option>
-        <option value="Asterisk dialplan">Asterisk dialplan</option>
-        <option value="Brainfuck">Brainfuck</option>
-        <option value="C, C++, C#">C, C++, C#</option>
-        <option value="Ceylon">Ceylon</option>
-        <option value="Clojure">Clojure</option>
-        <option value="Closure Stylesheets (GSS)">Closure Stylesheets (GSS)</option>
-        <option value="CMake">CMake</option>
-        <option value="COBOL">COBOL</option>
-        <option value="CoffeeScript">CoffeeScript</option>
-        <option value="Common Lisp">Common Lisp</option>
-        <option value="Crystal">Crystal</option>
-        <option value="CSS">CSS</option>
-        <option value="Cypher">Cypher</option>
-        <option value="Cython">Cython</option>
-        <option value="D">D</option>
-        <option value="Dart">Dart</option>
-        <option value="Django">Django</option>
-        <option value="Dockerfile">Dockerfile</option>
-        <option value="diff">diff</option>
-        <option value="DTD">DTD</option>
-        <option value="Dylan">Dylan</option>
-        <option value="EBNF">EBNF</option>
-        <option value="ECL">ECL</option>
-        <option value="Eiffel">Eiffel</option>
-        <option value="Elm">Elm</option>
-        <option value="Erlang">Erlang</option>
-        <option value="Factor">Factor</option>
-        <option value="FCL">FCL</option>
-        <option value="Forth">Forth</option>
-        <option value="Fortran">Fortran</option>
-        <option value="F#">F#</option>
-        <option value="Gas">Gas</option>
-        <option value="Gherkin">Gherkin</option>
-        <option value="Go">Go</option>
-        <option value="Groovy">Groovy</option>
-        <option value="HAML">HAML</option>
-        <option value="Handlebars">Handlebars</option>
-        <option value="Haskell">Haskell</option>
-        <option value="Literate">Literate</option>
-        <option value="Haxe">Haxe</option>
-        <option value="HTML embedded">HTML embedded</option>
-        <option value="HTML mixed-mode">HTML mixed-mode</option>
-        <option value="HTTP">HTTP</option>
-        <option value="IDL">IDL</option>
-        <option value="Java">Java</option>
-        <option value="Jade">Jade</option>
-        <option value="JavaScript">JavaScript</option>
-        <option value="JSX">JSX</option>
-        <option value="Jinja2">Jinja2</option>
-        <option value="Julia">Julia</option>
-        <option value="Kotlin">Kotlin</option>
-        <option value="LESS">LESS</option>
-        <option value="LiveScript">LiveScript</option>
-        <option value="Lua">Lua</option>
-        <option value="Markdown">Markdown</option>
-        <option value="GitHub-flavour">GitHub-flavour</option>
-        <option value="Mathematica">Mathematica</option>
-        <option value="mbox">mbox</option>
-        <option value="mIRC">mIRC</option>
-        <option value="Modelica">Modelica</option>
-        <option value="MscGen">MscGen</option>
-        <option value="MUMPS">MUMPS</option>
-        <option value="Nginx">Nginx</option>
-        <option value="NSIS">NSIS</option>
-        <option value="NTriples">NTriples</option>
-        <option value="Objective C">Objective C</option>
-        <option value="OCaml">OCaml</option>
-        <option value="Octave">Octave</option>
-        <option value="Oz">Oz</option>
-        <option value="Pascal">Pascal</option>
-        <option value="PEG.js">PEG.js</option>
-        <option value="Perl">Perl</option>
-        <option value="PGP (ASCII armor)">PGP (ASCII armor)</option>
-        <option value="PHP">PHP</option>
-        <option value="Pig Latin">Pig Latin</option>
-        <option value="PowerShell">PowerShell</option>
-        <option value="Properties files">Properties files</option>
-        <option value="ProtoBuf">ProtoBuf</option>
-        <option value="Puppet">Puppet</option>
-        <option value="Python">Python</option>
-        <option value="Q">Q</option>
-        <option value="R">R</option>
-        <option value="RPM">RPM</option>
-        <option value="reStructuredText">reStructuredText</option>
-        <option value="Ruby">Ruby</option>
-        <option value="Rust">Rust</option>
-        <option value="SAS">SAS</option>
-        <option value="Sass">Sass</option>
-        <option value="Spreadsheet">Spreadsheet</option>
-        <option value="Scala">Scala</option>
-        <option value="Scheme">Scheme</option>
-        <option value="SCSS">SCSS</option>
-        <option value="Shell">Shell</option>
-        <option value="Sieve">Sieve</option>
-        <option value="Slim">Slim</option>
-        <option value="Smalltalk">Smalltalk</option>
-        <option value="Smarty">Smarty</option>
-        <option value="Solr">Solr</option>
-        <option value="Soy">Soy</option>
-        <option value="Stylus">Stylus</option>
-        <option value="SQL">SQL</option>
-        <option value="SPARQL">SPARQL</option>
-        <option value="Squirrel">Squirrel</option>
-        <option value="Swift">Swift</option>
-        <option value="sTeX, LaTeX">sTeX, LaTeX</option>
-        <option value="Tcl">Tcl</option>
-        <option value="Textile">Textile</option>
-        <option value="Tiddlywiki">Tiddlywiki</option>
-        <option value="Tiki wiki">Tiki wiki</option>
-        <option value="TOML">TOML</option>
-        <option value="Tornado">Tornado</option>
-        <option value="troff">troff</option>
-        <option value="TTCN">TTCN</option>
-        <option value="TTCN Configuration">TTCN Configuration</option>
-        <option value="Turtle">Turtle</option>
-        <option value="Twig">Twig</option>
-        <option value="VB.NET">VB.NET</option>
-        <option value="VBScript">VBScript</option>
-        <option value="Velocity">Velocity</option>
-        <option value="Verilog/SystemVerilog">Verilog/SystemVerilog</option>
-        <option value="VHDL">VHDL</option>
-        <option value="Vue.js app">Vue.js app</option>
-        <option value="Web IDL">Web IDL</option>
-        <option value="XML/HTML">XML/HTML</option>
-        <option value="XQuery">XQuery</option>
-        <option value="Yacas">Yacas</option>
-        <option value="YAML">YAML</option>
-        <option value="YAML frontmatter">YAML frontmatter</option>
-        <option value="Z80">Z80</option>
       </select>
       <textarea id="editor-ta"></textarea>
   </div>
   <div class="splitter"></div>
   <div class="result">
-      <textarea id="result-ta"></textarea>
+      <div class="embed-content">
+          <textarea id="result-ta" readonly></textarea>
+      </div>
   </div>
 </div>
 </body>

@@ -452,54 +452,61 @@ body > header {
 }
 
 body > header .logo-link {
-    display: inline-block;
-    height: 100%;
-    font-size: 0;
-    padding: 11px 16px;
-    box-sizing: border-box;
+  display: inline-block;
+  height: 100%;
+  font-size: 0;
+  padding: 11px 16px;
+  box-sizing: border-box;
 }
 
 body > header .menus {
-    position: absolute;
-    left: 222px;
-    right: 300px;
-    top: 0;
-    bottom: 0;
-    box-sizing: border-box;
+  position: absolute;
+  left: 222px;
+  right: 300px;
+  top: 0;
+  bottom: 0;
+  box-sizing: border-box;
 }
 
 body > header .right-menus {
-    position: absolute;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    width: 300px;
-    box-sizing: border-box;
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 300px;
+  box-sizing: border-box;
 }
 
 body > header .menus .btn {
-    position: relative;
-    display: inline-block;
-    box-sizing: border-box;
-    font-size: 14px;
-    line-height: 60px;
-    height: 100%;
-    padding: 0 8px 0 28px;
+  position: relative;
+  display: inline-block;
+  box-sizing: border-box;
+  font-size: 14px;
+  line-height: 60px;
+  height: 100%;
+  padding: 0 8px 0 28px;
 }
 
 body > header .menus .btn:hover {
-    border-bottom: solid 3px #1C90F3;
-    cursor: pointer;
+  border-bottom: solid 3px #1C90F3;
+  cursor: pointer;
 }
 
-body > header .menus .btn.run::before {
-    position: absolute;
-    top: 0;
-    left: 0;
-    display: block;
-    font-size: 18px;
-    content: '▷';
-    margin-left: 8px;
+body > header .menus .btn::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  font-size: 18px;
+  margin-left: 8px;
+}
+
+body > header .menus .btn.update::before {
+  content: '▷';
+}
+
+body > header .menus .btn.save::before {
+  content: '✓';
 }
 
 body > .content {
@@ -517,33 +524,39 @@ body > .content .result {
   top: 0;
 }
 body > .content .editor {
-    left: 0;
+  left: 0;
 }
 
 body > .content .result {
-    right: 0;
+  right: 0;
+  padding: 20px;
+  overflow: auto;
+  background: #FFFFFF;
 }
 
+body > .content .result .embed-content {
+  width: 84%;
+  border: 1px solid #cfd6d9;
+  visibility: hidden;
+}
 
 body > .content .splitter {
-    z-index: 50;
-    width: 9px;
-    height: 100%;
-    border-left: 4px solid #f3f5f6;
-    border-right: 4px solid #f3f5f6;
-    cursor: col-resize;
-    position: absolute;
-    background-color: #cfd6d9;
-    top: 0;
-    left: 50%;
-    margin-left: -4px;
-    box-sizing: border-box;
+  z-index: 50;
+  width: 9px;
+  height: 100%;
+  border-left: 4px solid #f3f5f6;
+  border-right: 4px solid #FFFFFF;
+  cursor: col-resize;
+  position: absolute;
+  background-color: #cfd6d9;
+  top: 0;
+  left: 50%;
+  margin-left: -4px;
+  box-sizing: border-box;
 }
 
 body > .content .editor textarea,
 body > .content .result textarea {
-  width: 100%;
-  height: 100%;
   border: none;
   padding: 0;
   -webkit-appearance: none;
@@ -552,60 +565,70 @@ body > .content .result textarea {
   outline: none;
 }
 
-body > .content .editor .language {
-    position: absolute;
-    top: 8px;
-    right: 14px;
-    z-index: 250;
-    -webkit-appearance: none;
-    border: none;
-    background-color: #f3f5f6;
-    padding: 4px 25px 5px 10px;
-    color: #7f94a1;
-    font-size: 12px;
-    outline: none;
-    border: 1px solid transparent;
-    border-radius: 20px;
-    box-sizing: border-box;
-    text-align: right;
+body > .content .editor .language-appearance {
+  -webkit-appearance: none;
+  border: none;
+  background-color: transparent;
+  padding: 4px 25px 5px 10px;
+  color: #7f94a1;
+  font-size: 12px;
+  outline: none;
+  border: 1px solid transparent;
+  border-radius: 20px;
+  box-sizing: border-box;
 }
 
-body > .content .editor .language option {
-    text-align: right;
+body > .content .editor .language {
+  position: absolute;
+  top: 8px;
+  right: 14px;
+  z-index: 250;
+  width: 96px;
+}
+
+body > .content .editor #language-hidden-select {
+  display: block;
+  visibility: hidden;
+  position: absolute;
+  top: -10000px;
 }
 
 body > .content .editor .language:hover {
-    color: #1C90F3;
-    border: 1px solid #1C90F3;
-    cursor: pointer;
+  color: #1C90F3;
+  border: 1px solid #1C90F3;
+  cursor: pointer;
 }
 
 body > .content .editor::before {
-    content: '﹀';
-    position: absolute;
-    top: 16px;
-    right: 22px;
-    display: block;
-    font-size: 16px;
-    z-index: 300;
-    color: #7f94a1;
+  content: '▾';
+  position: absolute;
+  top: 11px;
+  right: 22px;
+  display: block;
+  font-size: 16px;
+  z-index: 200;
+  color: #7f94a1;
 }
 
 body > .content .result::before {
-    position: absolute;
-    top: 10px;
-    right: 20px;
-    display: block;
-    content: "PREVIEW";
-    webkit-font-smoothing: antialiased;
-    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen,Ubuntu,Cantarell,"Fira Sans","Droid Sans","Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
-    font-size: 12px;
-    color: #7f94a1;
-    z-index: 200;
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  display: block;
+  content: "Embed Preview";
+  webkit-font-smoothing: antialiased;
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen,Ubuntu,Cantarell,"Fira Sans","Droid Sans","Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+  font-size: 12px;
+  color: #7f94a1;
+  z-index: 200;
 }
 
-.content .CodeMirror {
-    height: 100%;
-    background: #f3f5f6;
-    color: #666;
+.content .editor .CodeMirror {
+  height: 100%;
+  background: #f3f5f6;
+  color: #666;
+}
+
+.content .result .CodeMirror {
+  height: auto;
 }
