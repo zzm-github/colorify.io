@@ -552,7 +552,44 @@ body > .content .result textarea {
   outline: none;
 }
 
+body > .content .editor .language {
+    position: absolute;
+    top: 8px;
+    right: 14px;
+    z-index: 250;
+    -webkit-appearance: none;
+    border: none;
+    background-color: #f3f5f6;
+    padding: 4px 25px 5px 10px;
+    color: #7f94a1;
+    font-size: 12px;
+    outline: none;
+    border: 1px solid transparent;
+    border-radius: 20px;
+    box-sizing: border-box;
+    text-align: right;
+}
 
+body > .content .editor .language option {
+    text-align: right;
+}
+
+body > .content .editor .language:hover {
+    color: #1C90F3;
+    border: 1px solid #1C90F3;
+    cursor: pointer;
+}
+
+body > .content .editor::before {
+    content: '﹀';
+    position: absolute;
+    top: 16px;
+    right: 22px;
+    display: block;
+    font-size: 16px;
+    z-index: 300;
+    color: #7f94a1;
+}
 
 body > .content .result::before {
     position: absolute;

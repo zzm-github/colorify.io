@@ -8,7 +8,8 @@ function query(selector) {
 }
 
 function sync() {
-    resultEditor.setValue(sourceEditor.getValue());
+    var code = sourceEditor.getValue();
+    resultEditor.setValue(code);
 }
 
 function init() {
