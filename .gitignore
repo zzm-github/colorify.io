@@ -1,1 +1,5 @@
 node_modules
+files/*
+!files/keep
+code/*
+!code/keep

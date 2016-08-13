@@ -439,6 +439,35 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 }
 
+.toast {
+    position: fixed;
+    left: 0;
+    top: 55px;
+    right: 0;
+    height: 40px;
+    line-height: 40px;
+    font-size: 14px;
+    color: #666;
+    text-align: center;
+    z-index: 500;
+    box-shadow: 0 3px 3px rgba(57,70,78,.2);
+    border-top: 1px solid #DDD;
+    border-bottom: 1px solid #DDD;
+    opacity: 0;
+}
+
+.transition-opacity {
+    transition: opacity 0.6s;
+}
+
+.toast.success {
+    background-color: #d9edf7;
+}
+
+.toast.fail {
+    background-color: #f2dede;
+}
+
 body > header {
   position: absolute;
   top: 0;
@@ -464,7 +493,7 @@ body > header .logo-link {
 body > header .menus {
   position: absolute;
   left: 222px;
-  right: 300px;
+  right: 160px;
   top: 0;
   bottom: 0;
   box-sizing: border-box;
@@ -493,6 +522,35 @@ body > header .right-menus .btn {
   margin-left: 5px;
 }
 
+body > header .menus .link-wrap {
+    position: absolute;
+    display: block;
+    box-sizing: border-box;
+    font-size: 14px;
+    text-align: left;
+    margin-left: 20px;
+    top: 17px;
+    right: 0;
+    padding-right: 30px;
+    padding-left: 108px;
+    width: 384px;
+}
+body > header .menus .link-wrap label {
+    position: absolute;
+    top: 4px;
+    left: 0;
+}
+body > header .menus .link-wrap #link {
+    outline: none;
+    height: 24px;
+    border: 1px solid #cfd6d9;
+    padding: 2px 4px 2px 4px;
+    box-sizing: border-box;
+    width: 100%;
+    color: #59668E;
+    line-height: 24px;
+}
+
 body > header .menus .btn:hover,
 body > header .right-menus .btn:hover {
   border-bottom: solid 3px #1C90F3;
@@ -503,10 +561,10 @@ body > header .menus .btn::before,
 body > header .right-menus .btn::before {
   position: absolute;
   top: 0;
-  left: 0;
+  left: 8px;
   display: block;
   font-size: 18px;
-  margin-left: 8px;
+  webkit-font-smoothing: antialiased;
 }
 
 body > header .menus .btn.update::before {
@@ -525,7 +583,7 @@ body > header .menus .btn.settings::before {
 body > header .right-menus .btn.user::before {
   content: '☺';
   font-size: 20px;
-  left: -2px;
+  left: 6px;
 }
 
 body > .content {

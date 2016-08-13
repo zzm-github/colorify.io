@@ -15,5 +15,11 @@
   "bugs": {
     "url": "https://github.com/zzm-github/colorify.io/issues"
   },
-  "homepage": "https://github.com/zzm-github/colorify.io#readme"
+  "homepage": "https://github.com/zzm-github/colorify.io#readme",
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "express": "^4.14.0",
+    "md5": "^2.1.0",
+    "shorthash": "0.0.2"
+  }
 }
