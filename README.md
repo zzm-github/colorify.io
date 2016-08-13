@@ -1,4 +1,11 @@
 # colorify.io
 
-This project is repository for the website colorify.io. The website provide online
-code highlighting feature and embedding feature.
+[colorify.io](https://colorify.io) provides code highlighting service.
+
+## Road map
+
+* Embed with script tag (You can only embed as an iframe)
+* User system
+* Automatically language detect
+
+## MIT License
