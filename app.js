@@ -60,5 +60,11 @@ app.get('/*', function(req, res) {
 
 const httpServer = http.createServer(app);
 const httpsServer = https.createServer(credentials, app);
-httpServer.listen(3000);
-httpsServer.listen(3001);
+
+if(process.env.NODE_ENV === 'production') {
+    httpServer.listen(80);
+    httpsServer.listen(443);
+} else {
+    httpServer.listen(3000);
+    httpsServer.listen(3001);
+}
