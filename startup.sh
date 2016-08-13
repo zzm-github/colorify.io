@@ -1,1 +1,1 @@
-pm2 start process.json --evn production
+pm2 start process.json --env production
