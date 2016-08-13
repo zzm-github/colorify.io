@@ -4,6 +4,7 @@
 
 ## Road map
 
+* Embed settings
 * Embed with script tag (You can only embed as an iframe)
 * User system
 * Automatically language detect
