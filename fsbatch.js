@@ -1,5 +1,4 @@
 const fs = require('fs');
-const slice = Array.prototype.slice;
 
 function queueWrite(items, index, callback) {
     var item = items[index];
